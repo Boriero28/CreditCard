@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Visualizza Ricariche per Carta di Credito</h2>
+    <form (ngSubmit)="getRecharges()">
+      <div class="form-group">
+        <label for="cardId">ID Carta di Credito:</label>
+        <input type="number" class="form-control" [(ngModel)]="cardId" name="cardId" required>
+      </div>
+      <div class="form-group">
+        <label for="limit">Numero massimo di ricariche da visualizzare:</label>
+        <input type="number" class="form-control" [(ngModel)]="limit" name="limit" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Visualizza Ricariche</button>
+    </form>
+    <ul class="list-group mt-3" *ngIf="recharges.length > 0">
+      <li class="list-group-item" *ngFor="let recharge of recharges">
+        <strong>ID Ricarica:</strong> {{ recharge.RicaricaID }} <br>
+        <strong>Data Ricarica:</strong> {{ recharge.DataRicarica | date }} <br>
+        <strong>Importo Ricarica:</strong> {{ recharge.ImportoRicarica }}
+      </li>
+    </ul>
+    <p *ngIf="recharges.length === 0">Nessuna ricarica disponibile.</p>
+  </div>
+  

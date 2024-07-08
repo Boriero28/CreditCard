@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Lista delle Carte di Credito</h2>
+  <div>
+    <label for="limit">Numero massimo di carte da visualizzare:</label>
+    <input type="number" [(ngModel)]="limit">
+    <button (click)="getCreditCards()" class="btn btn-primary">Visualizza Carte di Credito</button>
+  </div>
+  <ul class="list-group mt-3" *ngIf="creditCards.length > 0">
+    <li class="list-group-item" *ngFor="let card of creditCards">
+      <strong>Titolare:</strong> {{ card.Titolare }} <br>
+      <strong>Numero Carta:</strong> {{ card.NumeroCartaCredito }} <br>
+      <strong>Scadenza:</strong> {{ card.Scadenza | date }} <br>
+      <strong>Credito Residuo:</strong> {{ card.CreditoResiduo }}
+    </li>
+  </ul>
+  <p *ngIf="creditCards.length === 0">Nessuna carta di credito disponibile.</p>
+</div>

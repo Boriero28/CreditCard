@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Ricerca Carte di Credito</h2>
+    <form (ngSubmit)="searchCreditCards()">
+      <div class="form-group">
+        <label for="cognome">Cognome:</label>
+        <input type="text" class="form-control" [(ngModel)]="cognome" name="cognome" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Cerca</button>
+    </form>
+    <ul class="list-group" *ngIf="creditCards.length > 0">
+      <li class="list-group-item" *ngFor="let card of creditCards">
+        <strong>Titolare:</strong> {{ card.Titolare }} <br>
+        <strong>Numero Carta:</strong> {{ card.NumeroCartaCredito }} <br>
+        <strong>Scadenza:</strong> {{ card.Scadenza | date }} <br>
+        <strong>Credito Residuo:</strong> {{ card.CreditoResiduo }}
+      </li>
+    </ul>
+  </div>
+  

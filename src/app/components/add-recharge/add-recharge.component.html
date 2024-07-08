@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Aggiungi Ricarica</h2>
+    <form (ngSubmit)="addRecharge()">
+      <div class="form-group">
+        <label for="RicaricaID">ID Ricarica:</label>
+        <input type="number" class="form-control" [(ngModel)]="rechargeData.RicaricaID" name="RicaricaID" required>
+      </div>
+      <div class="form-group">
+        <label for="CartaCreditoID">ID Carta di Credito:</label>
+        <input type="number" class="form-control" [(ngModel)]="rechargeData.CartaCreditoID" name="CartaCreditoID" required>
+      </div>
+      <div class="form-group">
+        <label for="DataRicarica">Data Ricarica:</label>
+        <input type="date" class="form-control" [(ngModel)]="rechargeData.DataRicarica" name="DataRicarica" required>
+      </div>
+      <div class="form-group">
+        <label for="ImportoRicarica">Importo Ricarica:</label>
+        <input type="number" class="form-control" [(ngModel)]="rechargeData.ImportoRicarica" name="ImportoRicarica" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Aggiungi Ricarica</button>
+    </form>
+  </div>
+  

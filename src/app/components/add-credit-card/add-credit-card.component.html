@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Aggiungi Carta di Credito</h2>
+    <form (ngSubmit)="addCreditCard()">
+      <div class="form-group">
+        <label for="CartaCreditoID">ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="cardData.CartaCreditoID" name="CartaCreditoID" required>
+      </div>
+      <div class="form-group">
+        <label for="NumeroCartaCredito">Numero Carta Credito:</label>
+        <input type="text" class="form-control" [(ngModel)]="cardData.NumeroCartaCredito" name="NumeroCartaCredito" required>
+      </div>
+      <div class="form-group">
+        <label for="Titolare">Titolare:</label>
+        <input type="text" class="form-control" [(ngModel)]="cardData.Titolare" name="Titolare" required>
+      </div>
+      <div class="form-group">
+        <label for="Scadenza">Scadenza:</label>
+        <input type="date" class="form-control" [(ngModel)]="cardData.Scadenza" name="Scadenza" required>
+      </div>
+      <div class="form-group">
+        <label for="CreditoResiduo">Credito Residuo:</label>
+        <input type="number" class="form-control" [(ngModel)]="cardData.CreditoResiduo" name="CreditoResiduo" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Aggiungi</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Verifica Scadenza Carta di Credito</h2>
+    <form (ngSubmit)="checkCreditCard()">
+      <div class="form-group">
+        <label for="cartaCreditoID">ID Carta Credito:</label>
+        <input type="number" class="form-control" [(ngModel)]="cartaCreditoID" name="cartaCreditoID" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Verifica</button>
+    </form>
+    <div *ngIf="isExpired !== null">
+      <p>La carta di credito è <strong>{{ isExpired ? 'scaduta' : 'non scaduta' }}</strong>.</p>
+    </div>
+  </div>
+  
